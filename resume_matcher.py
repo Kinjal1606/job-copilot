@@ -44,7 +44,9 @@ for i in range(total):
     })
 
 # 3. Load Mistral
-llm = OllamaLLM(model="mistral", temperature=0.1)
+#llm = OllamaLLM(model="mistral", temperature=0.1) # 14s per job
+llm = OllamaLLM(model="llama3.2", temperature=0.1)  # faster - 3-5s per job
+
 
 # 4. Scoring prompt
 score_prompt = PromptTemplate.from_template("""
@@ -81,8 +83,8 @@ for i, job in enumerate(all_jobs, 1):
     print(f"   [{i}/{total}] Scoring: {title} at {company}...")
 
     output = score_chain.invoke({
-        "resume": resume_text[:3000],
-        "job":    job["content"][:2000]
+        "resume": resume_text[:1000], #3000 earlier,
+        "job":    job["content"][:800] #was 2000
     })
 
     # Parse fields
