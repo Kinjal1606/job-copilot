@@ -14,6 +14,7 @@ def clean_html(text):
     text = html.unescape(text)           # converts &lt; back to <
     text = re.sub(r'<[^>]+>', ' ', text) # removes <div>, <p> tags
     text = re.sub(r'\s+', ' ', text)     # collapses extra spaces
+
     return text.strip()
 
 # ── 1. Load jobs from Google Sheets ──────────────────────────────────

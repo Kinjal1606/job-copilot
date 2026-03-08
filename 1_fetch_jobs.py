@@ -77,7 +77,7 @@ def fetch_jsearch(company: str) -> list:
     return jobs
 
 # ── Main ──────────────────────────────────────────────────────────────
-greenhouse_companies = ["anthropic", "uber", "lyft"]
+greenhouse_companies = ["anthropic", "uberatg", "lyft"]
 jsearch_companies    = ["Meta", "Microsoft", "Apple", "Netflix", "AMD"]
 
 all_jobs = []
