@@ -10,7 +10,7 @@ embeddings = OllamaEmbeddings(model="mistral")
 
 vectordb = Chroma(
     persist_directory="/Users/kinjalsaxena/Documents/job-copilot/chroma_db",
-    embedding_function=embeddings,
+    embedding_function=embeddings
     collection_name="job_postings"   # ← add this
 
 )
